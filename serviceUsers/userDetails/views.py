@@ -140,6 +140,11 @@ def delete_user_profile(request):
         try:
             # Obtener el perfil del usuario usando 'profile_id'
             profile = UserProfile.objects.get(id=profile_id)
+            user = profile.user  # Obtener el usuario asociado al perfil
+             # Eliminar el usuario asociado (si quieres eliminarlo también)
+            user.delete()
+
+            # Eliminar el perfil
             profile.delete()
 
             return JsonResponse({'message': 'Profile deleted successfully'})
