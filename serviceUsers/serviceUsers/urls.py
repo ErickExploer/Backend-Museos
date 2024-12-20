@@ -9,4 +9,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='index.html')),
     path('', include('userDetails.urls')),  # Incluye las rutas del microservicio
+    path('', include('museos.urls')),  # Incluye las rutas del microservicio
+    path('', include('favoritos.urls')),  # Incluye las rutas del microservicio
 ]

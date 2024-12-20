@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'userDetails',
+    'museos',
+    'favoritos',
 ]
 
 MIDDLEWARE = [
@@ -128,7 +130,7 @@ USE_TZ = True
 STATIC_URL = '/static/'  # URL base para los archivos estáticos
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'my-react', 'build', 'static'),  # Ruta del sistema donde están los estáticos
+    #os.path.join(BASE_DIR, 'my-react', 'build', 'static'),  # Ruta del sistema donde están los estáticos
 ]
 
 
