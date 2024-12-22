@@ -11,4 +11,6 @@ urlpatterns = [
     path('', include('Usuario.urls')), 
     path('', include('Museos.urls')),  
     path('', include('UsuarioFavoritos.urls')),  
+    path('', include('MuseosEventos.urls')),
+
 ]

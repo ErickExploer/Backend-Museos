@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'Usuario',  # Cambiado a Usuario
     'Museos',
     'UsuarioFavoritos',
+    'MuseosEventos',
 ]
 
 MIDDLEWARE = [
