@@ -7,4 +7,5 @@ urlpatterns = [
     path('museos/update', views.update_museo, name='update_museo'),
     path('museos/delete', views.delete_museo, name='delete_museo'),
     path('museos/login', views.museo_login, name='museo_login'),  # Ruta de login
+    path('museos/all', views.get_all_museos, name='get_all_museos'),  # Obtener todos los museos
 ]

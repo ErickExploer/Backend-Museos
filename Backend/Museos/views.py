@@ -125,3 +125,16 @@ def delete_museo(request):
             return JsonResponse({'message': 'Museo deleted successfully'})
         except Museo.DoesNotExist:
             return JsonResponse({'error': 'Museo not found'}, status=404)
+
+
+@csrf_exempt
+def get_all_museos(request):
+    if request.method == 'POST':
+        museos = Museo.objects.all().values(
+            'id', 'nombre', 'ubicacion', 'descripcion', 
+            'horario_apertura', 'horario_cierre', 
+            'telefono', 'email'
+        )
+        return JsonResponse(list(museos), safe=False, status=200)
+    else:
+        return JsonResponse({'error': 'Invalid request method. Use POST'}, status=405)
