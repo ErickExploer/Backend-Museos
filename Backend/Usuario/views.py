@@ -6,6 +6,7 @@ from django.core.exceptions import ObjectDoesNotExist
 import json
 from django.contrib.auth.models import User
 from django.db import IntegrityError
+from django.contrib.auth import authenticate
 
 
 
@@ -151,3 +152,66 @@ def delete_user_profile(request):
         
         except UserProfile.DoesNotExist:
             return JsonResponse({'error': 'Profile not found'}, status=404)
+
+
+# Obtener todos los usuarios y sus perfiles (GET con POST)
+@csrf_exempt
+def get_all_users(request):
+    if request.method == 'POST':
+        users = User.objects.all()  # Obtener todos los usuarios
+        user_list = []
+
+        for user in users:
+            try:
+                profile = UserProfile.objects.get(user=user)
+                profile_data = {
+                    'edad': profile.edad,
+                    'genero': profile.genero,
+                    'oficio': profile.oficio,
+                }
+            except UserProfile.DoesNotExist:
+                profile_data = None  # Si no tiene un perfil asociado
+
+            user_list.append({
+                'id': user.id,
+                'username': user.username,
+                'email': user.email,
+                'first_name': user.first_name,
+                'last_name': user.last_name,
+                'profile': profile_data
+            })
+
+        return JsonResponse({'users': user_list}, status=200)
+    else:
+        return JsonResponse({'error': 'Invalid request method. Use POST'}, status=405)
+    
+@csrf_exempt
+def login_user(request):
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+            identifier = data.get('identifier')  # Puede ser username o email
+            password = data.get('password')
+
+            if not identifier or not password:
+                return JsonResponse({'error': 'Identifier and password are required'}, status=400)
+
+            # Buscar usuario por username o email
+            try:
+                user = User.objects.get(username=identifier)
+            except User.DoesNotExist:
+                try:
+                    user = User.objects.get(email=identifier)
+                except User.DoesNotExist:
+                    return JsonResponse({'error': 'Invalid username/email or password'}, status=401)
+
+            # Verificar contraseña
+            user = authenticate(username=user.username, password=password)
+            if user is None:
+                return JsonResponse({'error': 'Invalid username/email or password'}, status=401)
+
+            return JsonResponse({'id': user.id}, status=200)
+        except json.JSONDecodeError:
+            return JsonResponse({'error': 'Invalid JSON format'}, status=400)
+    else:
+        return JsonResponse({'error': 'Invalid request method. Use POST'}, status=405)
