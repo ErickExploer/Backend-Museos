@@ -84,7 +84,7 @@ DATABASES = {
     'default': {
         #'ENGINE': 'django.db.backends.sqlite3',
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Backend',  # Cambié el nombre de la base de datos a "Backend"
+        'NAME': 'museos',  # Se queda con museos nuv
         'USER': 'postgres',
         'PASSWORD': '1234',
         'HOST': 'localhost',
