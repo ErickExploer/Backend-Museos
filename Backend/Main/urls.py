@@ -12,5 +12,5 @@ urlpatterns = [
     path('', include('Museos.urls')),  
     path('', include('UsuarioFavoritos.urls')),  
     path('', include('MuseosEventos.urls')),
-
+    path('', include('CartaPresentacion.urls')),
 ]

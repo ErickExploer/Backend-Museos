@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'Museos',
     'UsuarioFavoritos',
     'MuseosEventos',
+    'CartaPresentacion',
 ]
 
 MIDDLEWARE = [
@@ -84,7 +85,7 @@ DATABASES = {
     'default': {
         #'ENGINE': 'django.db.backends.sqlite3',
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'museos',  # Se queda con museos nuv
+        'NAME': 'Backend',  # Se queda con museos nuv
         'USER': 'postgres',
         'PASSWORD': '1234',
         'HOST': 'localhost',
