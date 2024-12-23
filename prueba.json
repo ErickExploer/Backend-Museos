@@ -1,125 +1,102 @@
 {
     "info": {
-      "name": "UserProfile API",
-      "_postman_id": "b1a6f9cc-3f12-48ad-bd3a-f55556e6aabc",
-      "description": "Colección para probar todos los endpoints de UserProfile API.",
-      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+        "name": "CartaPresentacion API",
+        "_postman_id": "b1a6f9cc-3f12-48ad-bd3a-f55556e6aabc",
+        "description": "Colección para probar todos los endpoints de CartaPresentacion API.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
     },
     "item": [
-      {
-        "name": "Crear un perfil",
-        "request": {
-          "method": "POST",
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
+        {
+            "name": "Crear CartaPresentacion",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"nombre\": \"Carta para el Museo de Arte\",\n    \"descripcion\": \"Carta de presentación para un museo de arte contemporáneo.\",\n    \"calificacion\": 4.5,\n    \"costo\": 200.00,\n    \"horario\": \"9:00 AM - 5:00 PM\",\n    \"distancia\": 10.5\n}"
+                },
+                "url": {
+                    "raw": "http://127.0.0.1:8000/CartaPresentacion/create",
+                    "protocol": "http",
+                    "host": ["127.0.0.1"],
+                    "port": "8000",
+                    "path": ["CartaPresentacion", "create"]
+                }
             }
-          ],
-          "body": {
-            "mode": "raw",
-            "raw": "{\n    \"username\": \"usuario123\",\n    \"password\": \"miContraseñaSegura\",\n    \"email\": \"usuario123@example.com\",\n    \"first_name\": \"Juan\",\n    \"last_name\": \"Pérez\",\n    \"edad\": 25,\n    \"genero\": \"M\",\n    \"oficio\": \"Ingeniero\"\n}"
-          },
-          "url": {
-            "raw": "http://127.0.0.1:8000/profiles",
-            "protocol": "http",
-            "host": ["127.0.0.1"],
-            "port": "8000",
-            "path": ["profiles"]
-          }
-        }
-      },
-      {
-        "name": "Obtener un perfil",
-        "request": {
-          "method": "POST",
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
+        },
+        {
+            "name": "Obtener CartaPresentacion",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"id\": 1\n}"
+                },
+                "url": {
+                    "raw": "http://127.0.0.1:8000/CartaPresentacion/obtener",
+                    "protocol": "http",
+                    "host": ["127.0.0.1"],
+                    "port": "8000",
+                    "path": ["CartaPresentacion", "obtener"]
+                }
             }
-          ],
-          "body": {
-            "mode": "raw",
-            "raw": "{\n    \"profile_id\": 1\n}"
-          },
-          "url": {
-            "raw": "http://127.0.0.1:8000/profiles/get",
-            "protocol": "http",
-            "host": ["127.0.0.1"],
-            "port": "8000",
-            "path": ["profiles", "get"]
-          }
-        }
-      },
-      {
-        "name": "Actualizar un perfil",
-        "request": {
-          "method": "POST",
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
+        },
+        {
+            "name": "Actualizar CartaPresentacion",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"id\": 1,\n    \"nombre\": \"Carta actualizada para el Museo de Arte\",\n    \"descripcion\": \"Carta de presentación actualizada para un museo de arte contemporáneo.\",\n    \"calificacion\": 4.8,\n    \"costo\": 250.00,\n    \"horario\": \"10:00 AM - 6:00 PM\",\n    \"distancia\": 12.0\n}"
+                },
+                "url": {
+                    "raw": "http://127.0.0.1:8000/CartaPresentacion/editar",
+                    "protocol": "http",
+                    "host": ["127.0.0.1"],
+                    "port": "8000",
+                    "path": ["CartaPresentacion", "editar"]
+                }
             }
-          ],
-          "body": {
-            "mode": "raw",
-            "raw": "{\n    \"profile_id\": 1,\n    \"username\": \"usuario1234\",\n    \"email\": \"nuevo_email@example.com\",\n    \"edad\": 30,\n    \"genero\": \"M\",\n    \"oficio\": \"Desarrollador\"\n}"
-          },
-          "url": {
-            "raw": "http://127.0.0.1:8000/profiles/update",
-            "protocol": "http",
-            "host": ["127.0.0.1"],
-            "port": "8000",
-            "path": ["profiles", "update"]
-          }
-        }
-      },
-      {
-        "name": "Eliminar un perfil",
-        "request": {
-          "method": "POST",
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
+        },
+        {
+            "name": "Eliminar CartaPresentacion",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"id\": 1\n}"
+                },
+                "url": {
+                    "raw": "http://127.0.0.1:8000/CartaPresentacion/eliminar",
+                    "protocol": "http",
+                    "host": ["127.0.0.1"],
+                    "port": "8000",
+                    "path": ["CartaPresentacion", "eliminar"]
+                }
             }
-          ],
-          "body": {
-            "mode": "raw",
-            "raw": "{\n    \"profile_id\": 1\n}"
-          },
-          "url": {
-            "raw": "http://127.0.0.1:8000/profiles/delete",
-            "protocol": "http",
-            "host": ["127.0.0.1"],
-            "port": "8000",
-            "path": ["profiles", "delete"]
-          }
         }
-      },
-      {
-        "name": "Login de usuario",
-        "request": {
-          "method": "POST",
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "body": {
-            "mode": "raw",
-            "raw": "{\n    \"email\": \"usuario123@example.com\",\n    \"password\": \"miContraseñaSegura\"\n}"
-          },
-          "url": {
-            "raw": "http://127.0.0.1:8000/profiles/login",
-            "protocol": "http",
-            "host": ["127.0.0.1"],
-            "port": "8000",
-            "path": ["profiles", "login"]
-          }
-        }
-      }
     ]
-  }
+}
