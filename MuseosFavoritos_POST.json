@@ -1,0 +1,126 @@
+{
+    "info": {
+      "name": "MuseosEventos API",
+      "_postman_id": "c9b7e8de-2f23-4b91-bc22-8e1fbbcc5d6e",
+      "description": "Colección para probar todos los endpoints de MuseosEventos API.",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Crear un evento",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"nombre\": \"Exposición de arte moderno\",\n    \"fecha\": \"2024-12-30\",\n    \"costo\": 20.5,\n    \"museo_id\": 1\n}"
+          },
+          "url": {
+            "raw": "http://127.0.0.1:8000/eventos/create",
+            "protocol": "http",
+            "host": ["127.0.0.1"],
+            "port": "8000",
+            "path": ["eventos", "create"]
+          }
+        }
+      },
+      {
+        "name": "Obtener un evento",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"id\": 1\n}"
+          },
+          "url": {
+            "raw": "http://127.0.0.1:8000/eventos/get",
+            "protocol": "http",
+            "host": ["127.0.0.1"],
+            "port": "8000",
+            "path": ["eventos", "get"]
+          }
+        }
+      },
+      {
+        "name": "Actualizar un evento",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"id\": 1,\n    \"nombre\": \"Exposición de arte contemporáneo\",\n    \"fecha\": \"2025-01-15\",\n    \"costo\": 25.0,\n    \"museo_id\": 2\n}"
+          },
+          "url": {
+            "raw": "http://127.0.0.1:8000/eventos/update",
+            "protocol": "http",
+            "host": ["127.0.0.1"],
+            "port": "8000",
+            "path": ["eventos", "update"]
+          }
+        }
+      },
+      {
+        "name": "Eliminar un evento",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"id\": 1\n}"
+          },
+          "url": {
+            "raw": "http://127.0.0.1:8000/eventos/delete",
+            "protocol": "http",
+            "host": ["127.0.0.1"],
+            "port": "8000",
+            "path": ["eventos", "delete"]
+          }
+        }
+      },
+      {
+        "name": "Listar eventos por museo",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"museo_id\": 1\n}"
+          },
+          "url": {
+            "raw": "http://127.0.0.1:8000/eventos/listar_por_museo",
+            "protocol": "http",
+            "host": ["127.0.0.1"],
+            "port": "8000",
+            "path": ["eventos", "listar_por_museo"]
+          }
+        }
+      }
+    ]
+  }
+  

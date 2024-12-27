@@ -1,0 +1,149 @@
+{
+    "info": {
+      "name": "Museos API",
+      "_postman_id": "d5e3f2fc-1234-4567-890a-bcdef1234567",
+      "description": "Colección para probar todos los endpoints de Museos API.",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Crear un museo",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"nombre\": \"Museo de Arte Moderno\",\n    \"ubicacion\": \"Av. Principal 123\",\n    \"descripcion\": \"Museo dedicado al arte moderno.\",\n    \"horario_apertura\": \"09:00\",\n    \"horario_cierre\": \"18:00\",\n    \"telefono\": \"123456789\",\n    \"email\": \"arte@modernomuseo.com\",\n    \"password\": \"securepassword\"\n}"
+          },
+          "url": {
+            "raw": "http://127.0.0.1:8000/museos/create",
+            "protocol": "http",
+            "host": ["127.0.0.1"],
+            "port": "8000",
+            "path": ["museos", "create"]
+          }
+        }
+      },
+      {
+        "name": "Obtener un museo",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"id\": 1\n}"
+          },
+          "url": {
+            "raw": "http://127.0.0.1:8000/museos/get",
+            "protocol": "http",
+            "host": ["127.0.0.1"],
+            "port": "8000",
+            "path": ["museos", "get"]
+          }
+        }
+      },
+      {
+        "name": "Actualizar un museo",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"id\": 1,\n    \"nombre\": \"Museo de Arte Contemporáneo\",\n    \"ubicacion\": \"Av. Nueva 456\",\n    \"descripcion\": \"Museo dedicado al arte contemporáneo.\",\n    \"horario_apertura\": \"10:00\",\n    \"horario_cierre\": \"19:00\",\n    \"telefono\": \"987654321\",\n    \"email\": \"arte@contemporaneomuseo.com\",\n    \"password\": \"updatedpassword\"\n}"
+          },
+          "url": {
+            "raw": "http://127.0.0.1:8000/museos/update",
+            "protocol": "http",
+            "host": ["127.0.0.1"],
+            "port": "8000",
+            "path": ["museos", "update"]
+          }
+        }
+      },
+      {
+        "name": "Eliminar un museo",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"id\": 1\n}"
+          },
+          "url": {
+            "raw": "http://127.0.0.1:8000/museos/delete",
+            "protocol": "http",
+            "host": ["127.0.0.1"],
+            "port": "8000",
+            "path": ["museos", "delete"]
+          }
+        }
+      },
+      {
+        "name": "Login de un museo",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"email\": \"arte@modernomuseo.com\",\n    \"password\": \"securepassword\"\n}"
+          },
+          "url": {
+            "raw": "http://127.0.0.1:8000/museos/login",
+            "protocol": "http",
+            "host": ["127.0.0.1"],
+            "port": "8000",
+            "path": ["museos", "login"]
+          }
+        }
+      },
+      {
+        "name": "Obtener todos los museos",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{}"
+          },
+          "url": {
+            "raw": "http://127.0.0.1:8000/museos/all",
+            "protocol": "http",
+            "host": ["127.0.0.1"],
+            "port": "8000",
+            "path": ["museos", "all"]
+          }
+        }
+      }
+    ]
+  }
+  

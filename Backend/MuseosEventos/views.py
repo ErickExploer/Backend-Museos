@@ -4,16 +4,6 @@ from .models import Evento
 from Museos.models import Museo  # Asegúrate de importar el modelo Museo
 import json
 
-
-
-
-
-
-
-
-
-
-
 from django.views.decorators.csrf import csrf_exempt
 
 # Crear evento

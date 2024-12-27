@@ -1,0 +1,103 @@
+{
+    "info": {
+      "name": "UsuarioFavoritos API",
+      "_postman_id": "abc12345-6789-def0-1234-56789abcdef0",
+      "description": "Colección para probar todos los endpoints de UsuarioFavoritos API.",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Crear un favorito",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"nombre\": \"Mis Favoritos\",\n    \"usuario_id\": 1,\n    \"museos\": [1, 2, 3]\n}"
+          },
+          "url": {
+            "raw": "http://127.0.0.1:8000/favoritos/create",
+            "protocol": "http",
+            "host": ["127.0.0.1"],
+            "port": "8000",
+            "path": ["favoritos", "create"]
+          }
+        }
+      },
+      {
+        "name": "Leer un favorito",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"id\": 1\n}"
+          },
+          "url": {
+            "raw": "http://127.0.0.1:8000/favoritos/read",
+            "protocol": "http",
+            "host": ["127.0.0.1"],
+            "port": "8000",
+            "path": ["favoritos", "read"]
+          }
+        }
+      },
+      {
+        "name": "Actualizar un favorito",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"id\": 1,\n    \"nombre\": \"Favoritos Actualizados\",\n    \"museos\": [2, 3, 4]\n}"
+          },
+          "url": {
+            "raw": "http://127.0.0.1:8000/favoritos/update",
+            "protocol": "http",
+            "host": ["127.0.0.1"],
+            "port": "8000",
+            "path": ["favoritos", "update"]
+          }
+        }
+      },
+      {
+        "name": "Eliminar un favorito",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"id\": 1\n}"
+          },
+          "url": {
+            "raw": "http://127.0.0.1:8000/favoritos/delete",
+            "protocol": "http",
+            "host": ["127.0.0.1"],
+            "port": "8000",
+            "path": ["favoritos", "delete"]
+          }
+        }
+      }
+    ]
+  }
+  
